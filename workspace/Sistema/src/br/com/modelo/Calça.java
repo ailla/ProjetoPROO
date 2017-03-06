@@ -1,9 +1,9 @@
 package br.com.modelo;
 
-public class Calça {
+public class Calça extends Produto{
 
-	public Calça() {
-		// TODO Auto-generated constructor stub
+	public Calça(String nomeProduto, double valorProduto, char tamanhoProduto, String codigoProduto) {
+		Calça calça = new Calça (nomeProduto, valorProduto, tamanhoProduto, codigoProduto);
 	}
 
 }
