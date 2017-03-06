@@ -3,8 +3,9 @@ package br.com.modelo;
 public abstract class Produto {
 	private String nomeProduto;
 	private double valorProduto;
-	private char tamanhoProduto;
+	private String tamanhoProduto;
 	private String codigoProduto;
+	private String corProduto;
 	public String getNomeProduto() {
 		return nomeProduto;
 	}
@@ -17,10 +18,10 @@ public abstract class Produto {
 	public void setValorProduto(double valorProduto) {
 		this.valorProduto = valorProduto;
 	}
-	public char getTamanhoProduto() {
+	public String getTamanhoProduto() {
 		return tamanhoProduto;
 	}
-	public void setTamanhoProduto(char tamanhoProduto) {
+	public void setTamanhoProduto(String tamanhoProduto) {
 		this.tamanhoProduto = tamanhoProduto;
 	}
 	public String getCodigoProduto() {
@@ -28,5 +29,11 @@ public abstract class Produto {
 	}
 	public void setCodigoProduto(String codigoProduto) {
 		this.codigoProduto = codigoProduto;
+	}
+	public String getCorProduto() {
+		return corProduto;
+	}
+	public void setCorProduto(String corProduto) {
+		this.corProduto = corProduto;
 	}
 }
