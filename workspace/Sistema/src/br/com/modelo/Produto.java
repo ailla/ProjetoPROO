@@ -36,4 +36,11 @@ public abstract class Produto {
 	public void setCorProduto(String corProduto) {
 		this.corProduto = corProduto;
 	}
+	public Produto(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto) {
+		this.nomeProduto = nomeProduto;
+		this.valorProduto = valorProduto;
+		this.tamanhoProduto = tamanhoProduto;
+		this.codigoProduto = codigoProduto;
+		this.corProduto = corProduto;
+	}
 }

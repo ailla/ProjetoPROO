@@ -3,10 +3,10 @@ package br.com.modelo;
 import java.util.Scanner;
 
 public class Camiseta extends Produto{
-	private Camiseta(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto) {
-		Camiseta camiseta = new Camiseta(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
+	public Camiseta(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto){
+		super(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
 	}
-	public void adicionarCamiseta(){
+	static  Camiseta adicionarCamiseta(){
 		Scanner scan = new Scanner(System.in);
 		String nomeProduto;
 		double valorProduto;
@@ -18,11 +18,12 @@ public class Camiseta extends Produto{
 		System.out.println("Qual o valor da camiseta?");
 		valorProduto = scan.nextDouble();
 		System.out.println("Qual o tamanho da camiseta?");
-		tamanhoProduto = scan.nextLine();
+		tamanhoProduto = scan.next();
+		System.out.println("Qual a cor da camiseta?");
+		corProduto = scan.next();
 		System.out.println("Qual o código da camiseta?");
 		codigoProduto = scan.next();
-		System.out.println("Qual a cor da camiseta?");
-		corProduto = scan.nextLine();
 		Camiseta camiseta = new Camiseta(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
+		return camiseta;
 	}
 }

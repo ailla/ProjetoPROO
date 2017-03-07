@@ -1,8 +1,8 @@
 package br.com.exception;
 
-public class tipoDeCalçaException {
+public class TipoDeCalçaException extends Exception{
 
-	public tipoDeCalçaException() {
+	public TipoDeCalçaException() {
 		System.out.println("Tipo de calça Inválido!");
 	}
 

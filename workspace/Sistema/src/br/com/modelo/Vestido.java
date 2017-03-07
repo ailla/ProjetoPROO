@@ -2,12 +2,12 @@ package br.com.modelo;
 
 import java.util.Scanner;
 
-public class Vestido {
-	private Vestido(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto) {
-		Vestido vestidinho = new Vestido(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
+public class Vestido extends Produto{
+	public Vestido(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto){
+		super(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
 	}
 	
-	public void adicionarVestido(){
+	public static Vestido adicionarVestido(){
 		Scanner scan = new Scanner(System.in);
 		String nomeProduto;
 		double valorProduto;
@@ -19,11 +19,12 @@ public class Vestido {
 		System.out.println("Qual o valor do vestido?");
 		valorProduto = scan.nextDouble();
 		System.out.println("Qual o tamanho do vestido?");
-		tamanhoProduto = scan.nextLine();
+		tamanhoProduto = scan.next();
 		System.out.println("Qual o código do vestido?");
 		codigoProduto = scan.next();
 		System.out.println("Qual a cor do vestido?");
-		corProduto = scan.nextLine();
+		corProduto = scan.next();
 		Vestido vestidinho = new Vestido(nomeProduto, valorProduto, tamanhoProduto, codigoProduto, corProduto);
+		return vestidinho;
 	}
 }
