@@ -1,8 +1,9 @@
 package br.com.modelo;
-
 import java.util.ArrayList;
+
 import java.util.Scanner;
 import br.com.exception.*;
+import br.com.exception.SemComprasException;
 
 public class ListaDeCompras {
 	static ArrayList <Produto> compras = new ArrayList <Produto>();
@@ -66,7 +67,7 @@ public class ListaDeCompras {
 	}
 	static void listarProdutos(){
 		for(int i = 0; i < compras.size(); i++){
-			System.out.println("Produto "+ i+1);
+			System.out.println("Produto "+ (i+1));
 			System.out.println("Nome do Produto: " + compras.get(i).getNomeProduto());
 			System.out.println("Valor do produto: " + compras.get(i).getValorProduto());
 			System.out.println("Tamanho do Produto: " + compras.get(i).getTamanhoProduto());
@@ -79,8 +80,23 @@ public class ListaDeCompras {
 		listarProdutos();
 		System.out.println("Qual produto você deseja retirar?");
 	}
+	static double finalizarCompra(){
+		double valorFinal=0;
+		if(compras.isEmpty()){
+			try {
+				throw new SemComprasException();
+			} catch (SemComprasException e) {
+			}
+		} else {
+			for(int g = 0; g < compras.size(); g++){
+				valorFinal+= compras.get(g).getValorProduto();
+			}
+			System.out.println("O valor total de suas compras deu : R$ " + valorFinal);
+		} return valorFinal;
+	}
 	public static void main (String [] args){
 		adicionarProdutos();
 		listarProdutos();
+		finalizarCompra();
 	}
 }
