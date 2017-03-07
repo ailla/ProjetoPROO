@@ -1,5 +1,9 @@
 package br.com.modelo;
 
+import java.util.InputMismatchException;
+
+import br.com.exception.ValorInvalidoException;
+
 public abstract class Produto {
 	private String nomeProduto;
 	private double valorProduto;
@@ -38,7 +42,12 @@ public abstract class Produto {
 	}
 	public Produto(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto) {
 		this.nomeProduto = nomeProduto;
-		this.valorProduto = valorProduto;
+		try{
+			this.valorProduto = valorProduto;
+		} catch(InputMismatchException e){
+			System.out.println("Digite um tipo válido para o preço!");
+			System.out.println("Separe as casas decimais com vírgula!");
+		}
 		this.tamanhoProduto = tamanhoProduto;
 		this.codigoProduto = codigoProduto;
 		this.corProduto = corProduto;

@@ -1,5 +1,6 @@
 package br.com.modelo;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Camiseta extends Produto{
@@ -8,6 +9,7 @@ public class Camiseta extends Produto{
 	}
 	static  Camiseta adicionarCamiseta(){
 		Scanner scan = new Scanner(System.in);
+		scan.useLocale(Locale.US);
 		String nomeProduto;
 		double valorProduto;
 		String tamanhoProduto;

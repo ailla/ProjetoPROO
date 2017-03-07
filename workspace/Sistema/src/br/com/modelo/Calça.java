@@ -1,4 +1,5 @@
 package br.com.modelo;
+import java.util.Locale;
 import java.util.Scanner;
 public class Calça extends Produto{
 	public Calça(String nomeProduto, double valorProduto, String tamanhoProduto, String codigoProduto, String corProduto){
@@ -6,6 +7,7 @@ public class Calça extends Produto{
 	}
 	public static Calça adicionarCalça(){
 		Scanner scan = new Scanner(System.in);
+		scan.useLocale(Locale.US);
 		String nomeProduto;
 		double valorProduto;
 		String tamanhoProduto;
